@@ -21,5 +21,16 @@ def two_oldest_ages(ages):
     # you may find it helpful to research the `sorted(iter)` function, which
     # can take *any* type of list-like-thing, and returns a new, sorted list
     # from it.
-    oldest = 0
-    
+    oldest1 = 0
+    oldest2 = 0
+    for i in ages:
+        if oldest2 < i and i < oldest1:
+            oldest2 = i
+        if i > oldest1:
+            oldest2 = oldest1
+            oldest1 = i
+            
+        print(i, oldest2, oldest1)
+
+    return (oldest2, oldest1)
+            

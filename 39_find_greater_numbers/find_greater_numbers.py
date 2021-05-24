@@ -19,3 +19,14 @@ def find_greater_numbers(nums):
         >>> find_greater_numbers([])
         0
     """
+
+    setty = set()
+
+    grt_num_count = 0
+    for i in nums:
+        for j in setty:
+            if i > j:# if i is more than the previous elements shoved into a set inc count by 1
+                grt_num_count+=1
+        setty.add(i)
+
+    return grt_num_count
