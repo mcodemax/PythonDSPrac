@@ -22,9 +22,15 @@ def sum_pairs(nums, goal):
         ()
     """
 
-    for i in nums:
-        for j in nums[1:]:
-            if i + j == goal:
-                return (i, j)
+    store = set()
+
+    for i in nums: #using this we reduce time complexity to O(n) instead of 2 loops, we look for a difference then traverse array to find a diference in the set then return if we found it.
+        diff = goal - i
+        
+        if i in store:
+            return (diff, i)
+        store.add(diff)
+        
+
 
     return ()
