@@ -22,3 +22,13 @@ def valid_parentheses(parens):
         >>> valid_parentheses(")()(")
         False
     """
+    #must filter out parens like '()' first
+
+    while(parens != parens.replace('()','')):
+        parens = parens.replace('()','')
+    
+    if parens == '':
+        return True
+    else:
+        return False
+   
